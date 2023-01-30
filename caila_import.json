@@ -1,0 +1,453 @@
+{
+  "project" : {
+    "id" : "viselitsa-257734395-wtt",
+    "name" : "viselitsa-257734395-wtt",
+    "folder" : "/jaicp"
+  },
+  "settings" : {
+    "language" : "ru",
+    "spellingCorrection" : false,
+    "classificationAlgorithm" : "sts",
+    "timezone" : "Europe/Moscow",
+    "extendedSettings" : {
+      "tokenizerEngine" : "mystem",
+      "useShared" : false
+    },
+    "shared" : false
+  },
+  "intents" : [ {
+    "path" : "/ДавайИграть",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "давай поиграем"
+    }, {
+      "text" : "играть"
+    }, {
+      "text" : "хочу играть"
+    }, {
+      "text" : "начни игру"
+    }, {
+      "text" : "сыграем"
+    }, {
+      "text" : "запусти игру заново"
+    }, {
+      "text" : "переиграем"
+    }, {
+      "text" : "привет"
+    }, {
+      "text" : "здарова"
+    }, {
+      "text" : "заново"
+    }, {
+      "text" : "еще"
+    }, {
+      "text" : "здарова"
+    }, {
+      "text" : "здравствуй"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "давай"
+    }, {
+      "text" : "хочу"
+    }, {
+      "text" : "начнем"
+    }, {
+      "text" : "согласен"
+    }, {
+      "text" : "да"
+    }, {
+      "text" : "ага"
+    }, {
+      "text" : "погнали"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Letter",
+      "entity" : "RussianLetter",
+      "required" : true,
+      "prompts" : [ "Я загадал существительное в именительном падеже. Предложи букву, которая может быть в этом слове" ]
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "нет"
+    }, {
+      "text" : "неа"
+    }, {
+      "text" : "отстань"
+    }, {
+      "text" : "не хочу"
+    }, {
+      "text" : "не буду"
+    }, {
+      "text" : "не"
+    }, {
+      "text" : "отвали"
+    }, {
+      "text" : "хватит"
+    }, {
+      "text" : "стоп"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Буква",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@RussianLetter"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Letter",
+      "entity" : "RussianLetter",
+      "required" : true,
+      "prompts" : [ ]
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/endThisGame",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хватит"
+    }, {
+      "text" : "надоело"
+    }, {
+      "text" : "я устал"
+    }, {
+      "text" : "сдаюсь"
+    }, {
+      "text" : "стоп"
+    }, {
+      "text" : "прекрати"
+    }, {
+      "text" : "закончить"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Слово",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "$Word"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ПопыткаУгадать",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хочу угадать слово"
+    }, {
+      "text" : "угадать"
+    }, {
+      "text" : "ввести слово"
+    }, {
+      "text" : "ответ"
+    }, {
+      "text" : "знаю ответ"
+    }, {
+      "text" : "разгадка"
+    }, {
+      "text" : "отгадать"
+    }, {
+      "text" : "слово"
+    }, {
+      "text" : "знаю ответ"
+    }, {
+      "text" : "ответить"
+    }, {
+      "text" : "слово целиком"
+    }, {
+      "text" : "полное слово"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  } ],
+  "entities" : [ {
+    "entity" : {
+      "name" : "RussianLetter",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "а" ],
+      "value" : "{\"value\":\"а\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "б" ],
+      "value" : "{\"value\":\"б\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "в" ],
+      "value" : "{\"value\":\"в\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "г" ],
+      "value" : "{\"value\":\"г\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "д" ],
+      "value" : "{\"value\":\"д\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "е" ],
+      "value" : "{\"value\":\"е\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ж" ],
+      "value" : "{\"value\":\"ж\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "з" ],
+      "value" : "{\"value\":\"з\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "и" ],
+      "value" : "{\"value\":\"и\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "й" ],
+      "value" : "{\"value\":\"й\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "к" ],
+      "value" : "{\"value\":\"к\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "л" ],
+      "value" : "{\"value\":\"л\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "м" ],
+      "value" : "{\"value\":\"м\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "н" ],
+      "value" : "{\"value\":\"н\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "о" ],
+      "value" : "{\"value\":\"о\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "п" ],
+      "value" : "{\"value\":\"п\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "р" ],
+      "value" : "{\"value\":\"р\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "с" ],
+      "value" : "{\"value\":\"с\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "т" ],
+      "value" : "{\"value\":\"т\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "у" ],
+      "value" : "{\"value\":\"у\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ф" ],
+      "value" : "{\"value\":\"ф\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "х" ],
+      "value" : "{\"value\":\"х\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ц" ],
+      "value" : "{\"value\":\"ц\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ч" ],
+      "value" : "{\"value\":\"ч\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ш" ],
+      "value" : "{\"value\":\"ш\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "щ" ],
+      "value" : "{\"value\":\"щ\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ъ" ],
+      "value" : "{\"value\":\"ъ\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ы" ],
+      "value" : "{\"value\":\"ы\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ь" ],
+      "value" : "{\"value\":\"ь\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "э" ],
+      "value" : "{\"value\":\"э\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ю" ],
+      "value" : "{\"value\":\"ю\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "я" ],
+      "value" : "{\"value\":\"я\"}"
+    } ]
+  } ],
+  "enabledSystemEntities" : [ "mystem.geo", "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
+  "spellerDictionary" : [ ],
+  "systemEntities" : [ {
+    "name" : "mystem.geo",
+    "enabled" : true
+  }, {
+    "name" : "mystem.persn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.obsc",
+    "enabled" : false
+  }, {
+    "name" : "mystem.patrn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.famn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.romn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.latn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.numb",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.intg",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.abbr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.name",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.surn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.patr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.geox",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.orgn",
+    "enabled" : false
+  }, {
+    "name" : "duckling.number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.ordinal",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.amount-of-money",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.distance",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.date",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time-of-day",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.duration",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.phone-number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.email",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.url",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.interval",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "mlps-obscene.obscene",
+    "enabled" : false
+  }, {
+    "name" : "zb.datetime",
+    "enabled" : false
+  }, {
+    "name" : "zb.number",
+    "enabled" : false
+  } ],
+  "faq" : [ ]
+}

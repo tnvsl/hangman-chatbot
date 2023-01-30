@@ -1,0 +1,21 @@
+﻿name: zenbot-common
+
+entryPoint: test.sc
+  
+tests:
+#  include:
+#    - catchAll.xml
+  exclude:
+    - text.xml
+
+# Параметры NLU-сервиса CAILA:
+botEngine: v2
+language: ru
+
+sts:
+    noMatchThreshold: 0.2
+
+nlp:
+    intentNoMatchThresholds:
+        phrases: 0.2
+        patterns: 0.2
